@@ -26,91 +26,91 @@ $provide.value("$locale", {
       "PM"
     ],
     "DAY": [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
+      "\u0432\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435",
+      "\u043f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a",
+      "\u0432\u0442\u043e\u0440\u043d\u0438\u043a",
+      "\u0441\u0440\u0435\u0434\u0430",
+      "\u0447\u0435\u0442\u0432\u0435\u0440\u0433",
+      "\u043f\u044f\u0442\u043d\u0438\u0446\u0430",
+      "\u0441\u0443\u0431\u0431\u043e\u0442\u0430"
     ],
     "ERANAMES": [
-      "Before Christ",
-      "Anno Domini"
+      "\u0434\u043e \u043d. \u044d.",
+      "\u043d. \u044d."
     ],
     "ERAS": [
-      "BC",
-      "AD"
+      "\u0434\u043e \u043d. \u044d.",
+      "\u043d. \u044d."
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      "\u044f\u043d\u0432\u0430\u0440\u044f",
+      "\u0444\u0435\u0432\u0440\u0430\u043b\u044f",
+      "\u043c\u0430\u0440\u0442\u0430",
+      "\u0430\u043f\u0440\u0435\u043b\u044f",
+      "\u043c\u0430\u044f",
+      "\u0438\u044e\u043d\u044f",
+      "\u0438\u044e\u043b\u044f",
+      "\u0430\u0432\u0433\u0443\u0441\u0442\u0430",
+      "\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f",
+      "\u043e\u043a\u0442\u044f\u0431\u0440\u044f",
+      "\u043d\u043e\u044f\u0431\u0440\u044f",
+      "\u0434\u0435\u043a\u0430\u0431\u0440\u044f"
     ],
     "SHORTDAY": [
-      "Sun",
-      "Mon",
-      "Tue",
-      "Wed",
-      "Thu",
-      "Fri",
-      "Sat"
+      "\u0432\u0441",
+      "\u043f\u043d",
+      "\u0432\u0442",
+      "\u0441\u0440",
+      "\u0447\u0442",
+      "\u043f\u0442",
+      "\u0441\u0431"
     ],
     "SHORTMONTH": [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      "\u044f\u043d\u0432.",
+      "\u0444\u0435\u0432\u0440.",
+      "\u043c\u0430\u0440\u0442\u0430",
+      "\u0430\u043f\u0440.",
+      "\u043c\u0430\u044f",
+      "\u0438\u044e\u043d\u044f",
+      "\u0438\u044e\u043b\u044f",
+      "\u0430\u0432\u0433.",
+      "\u0441\u0435\u043d\u0442.",
+      "\u043e\u043a\u0442.",
+      "\u043d\u043e\u044f\u0431.",
+      "\u0434\u0435\u043a."
     ],
     "STANDALONEMONTH": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      "\u044f\u043d\u0432\u0430\u0440\u044c",
+      "\u0444\u0435\u0432\u0440\u0430\u043b\u044c",
+      "\u043c\u0430\u0440\u0442",
+      "\u0430\u043f\u0440\u0435\u043b\u044c",
+      "\u043c\u0430\u0439",
+      "\u0438\u044e\u043d\u044c",
+      "\u0438\u044e\u043b\u044c",
+      "\u0430\u0432\u0433\u0443\u0441\u0442",
+      "\u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044c",
+      "\u043e\u043a\u0442\u044f\u0431\u0440\u044c",
+      "\u043d\u043e\u044f\u0431\u0440\u044c",
+      "\u0434\u0435\u043a\u0430\u0431\u0440\u044c"
     ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE, MMMM d, y",
-    "longDate": "MMMM d, y",
-    "medium": "MMM d, y h:mm:ss a",
-    "mediumDate": "MMM d, y",
-    "mediumTime": "h:mm:ss a",
-    "short": "M/d/yy h:mm a",
-    "shortDate": "M/d/yy",
-    "shortTime": "h:mm a"
+    "fullDate": "EEEE, d MMMM y '\u0433'.",
+    "longDate": "d MMMM y '\u0433'.",
+    "medium": "d MMM y '\u0433'. H:mm:ss",
+    "mediumDate": "d MMM y '\u0433'.",
+    "mediumTime": "H:mm:ss",
+    "short": "dd.MM.yy H:mm",
+    "shortDate": "dd.MM.yy",
+    "shortTime": "H:mm"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "$",
-    "DECIMAL_SEP": ".",
-    "GROUP_SEP": ",",
+    "CURRENCY_SYM": "\u0440\u0443\u0431.",
+    "DECIMAL_SEP": ",",
+    "GROUP_SEP": "\u00a0",
     "PATTERNS": [
       {
         "gSize": 3,
@@ -129,10 +129,10 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-\u00a4",
-        "negSuf": "",
-        "posPre": "\u00a4",
-        "posSuf": ""
+        "negPre": "-",
+        "negSuf": "\u00a0\u00a4",
+        "posPre": "",
+        "posSuf": "\u00a0\u00a4"
       }
     ]
   },

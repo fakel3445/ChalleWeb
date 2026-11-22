@@ -1,6 +1,24 @@
 'use strict';
 angular.module("ngLocale", [], ["$provide", function($provide) {
 var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
+function getDecimals(n) {
+  n = n + '';
+  var i = n.indexOf('.');
+  return (i == -1) ? 0 : n.length - i - 1;
+}
+
+function getVF(n, opt_precision) {
+  var v = opt_precision;
+
+  if (undefined === v) {
+    v = Math.min(getDecimals(n), 3);
+  }
+
+  var base = Math.pow(10, v);
+  var f = ((n * base) | 0) % base;
+  return {v: v, f: f};
+}
+
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
@@ -8,91 +26,91 @@ $provide.value("$locale", {
       "PM"
     ],
     "DAY": [
-      "domingo",
-      "segunda-feira",
-      "ter\u00e7a-feira",
-      "quarta-feira",
-      "quinta-feira",
-      "sexta-feira",
-      "s\u00e1bado"
+      "ned\u011blja",
+      "poned\u011blnik",
+      "vtornik",
+      "sreda",
+      "\u010detvrtok",
+      "pjatnica",
+      "subota"
     ],
     "ERANAMES": [
-      "Antes de Cristo",
-      "Ano do Senhor"
+      "pr\u011bd na\u0161oj eroj\u0173",
+      "na\u0161a era"
     ],
     "ERAS": [
-      "a.C.",
-      "d.C."
+      "pr. n. e.",
+      "n. e."
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "janeiro",
-      "fevereiro",
-      "mar\u00e7o",
-      "abril",
-      "maio",
-      "junho",
-      "julho",
-      "agosto",
-      "setembro",
-      "outubro",
-      "novembro",
-      "dezembro"
+      "januara",
+      "februara",
+      "marta",
+      "aprila",
+      "maja",
+      "juna",
+      "jula",
+      "avgusta",
+      "septembra",
+      "oktobra",
+      "novembra",
+      "decembra"
     ],
     "SHORTDAY": [
-      "dom",
-      "seg",
-      "ter",
-      "qua",
-      "qui",
-      "sex",
-      "s\u00e1b"
+      "ned",
+      "pon",
+      "vto",
+      "sre",
+      "\u010det",
+      "pja",
+      "sub"
     ],
     "SHORTMONTH": [
       "jan",
-      "fev",
+      "feb",
       "mar",
-      "abr",
-      "mai",
+      "apr",
+      "maj",
       "jun",
       "jul",
-      "ago",
-      "set",
-      "out",
+      "avg",
+      "sep",
+      "okt",
       "nov",
-      "dez"
+      "dec"
     ],
     "STANDALONEMONTH": [
-      "janeiro",
-      "fevereiro",
-      "mar\u00e7o",
-      "abril",
-      "maio",
-      "junho",
-      "julho",
-      "agosto",
-      "setembro",
-      "outubro",
-      "novembro",
-      "dezembro"
+      "januar",
+      "februar",
+      "mart",
+      "april",
+      "maj",
+      "jun",
+      "jul",
+      "avgust",
+      "septembr",
+      "oktobr",
+      "novembr",
+      "decembr"
     ],
     "WEEKENDRANGE": [
       5,
       6
     ],
-    "fullDate": "EEEE, d 'de' MMMM 'de' y",
-    "longDate": "d 'de' MMMM 'de' y",
-    "medium": "d 'de' MMM 'de' y HH:mm:ss",
-    "mediumDate": "d 'de' MMM 'de' y",
+    "fullDate": "EEEE, d MMMM y",
+    "longDate": "d MMMM y",
+    "medium": "d MMM y HH:mm:ss",
+    "mediumDate": "d MMM y",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
-    "shortDate": "dd/MM/yy",
+    "short": "dd.MM.yy HH:mm",
+    "shortDate": "dd.MM.yy",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "R$",
+    "CURRENCY_SYM": "\u20ac",
     "DECIMAL_SEP": ",",
-    "GROUP_SEP": ".",
+    "GROUP_SEP": "\u00a0",
     "PATTERNS": [
       {
         "gSize": 3,
@@ -111,15 +129,15 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-\u00a4",
-        "negSuf": "",
-        "posPre": "\u00a4",
-        "posSuf": ""
+        "negPre": "-",
+        "negSuf": "\u00a0\u00a4",
+        "posPre": "",
+        "posSuf": "\u00a0\u00a4"
       }
     ]
   },
-  "id": "pt-br",
-  "localeID": "pt_BR",
-  "pluralCat": function(n, opt_precision) {  if (n >= 0 && n <= 2 && n != 2) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "id": "isv",
+  "localeID": "isv",
+  "pluralCat": function(n, opt_precision) {  var i = n | 0;  var vf = getVF(n, opt_precision);  if (vf.v == 0 && i % 10 == 1 && i % 100 != 11) {    return PLURAL_CATEGORY.ONE;  }  if (vf.v == 0 && i % 10 >= 2 && i % 10 <= 4 && (i % 100 < 12 || i % 100 > 14)) {    return PLURAL_CATEGORY.FEW;  }  if (vf.v == 0 && i % 10 == 0 || vf.v == 0 && i % 10 >= 5 && i % 10 <= 9 || vf.v == 0 && i % 100 >= 11 && i % 100 <= 14) {    return PLURAL_CATEGORY.MANY;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
